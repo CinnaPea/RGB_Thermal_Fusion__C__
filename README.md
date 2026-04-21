@@ -52,17 +52,6 @@ This project intentionally avoids deep learning approaches and instead emphasize
 - **Deployability** – realistic for embedded or constrained environments
 
 
-## Project Structure
-RGB_Thermal_Fusion_Cpp/
-├── apps/ # Application entry points (CLI / Qt GUI)
-├── include/ # Header files
-├── src/ # Core implementation
-├── data/ # Sample input data (if included)
-├── docs/ # Research report and documentation
-├── CMakeLists.txt
-└── .gitignore
-
-
 ## Technologies Used
 
 - **C++**
