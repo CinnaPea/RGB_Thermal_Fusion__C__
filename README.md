@@ -1,35 +1,87 @@
-# RGB Thermal Fusion (C++)
-
-A C++ project for enhancing thermal images and performing RGB–thermal fusion using traditional image processing techniques.  
-Designed for real-time feasibility with a Qt-based visualization interface.
+# RGB–Thermal Image Enhancement & Fusion (C++ / Qt)
 
 ## Overview
 
-This project focuses on improving the visual quality of thermal images, which typically suffer from:
-- Low contrast
-- High noise
-- Weak structural details
+This project presents a complete implementation of a **thermal image enhancement pipeline** built using traditional image processing techniques, along with an optional **RGB–thermal fusion module** for improved visual perception in multi-sensor systems.
 
-The proposed method applies:
-- Multi-scale decomposition (RGF-based)
-- Selective detail enhancement (entropy + contrast)
-- CLAHE-based base layer enhancement
-- Optional RGB–thermal fusion using luminance (Y channel)
+The primary objective is to improve the **observability of thermal images**, which are often degraded by:
+- low contrast
+- high noise levels
+- lack of fine structural detail
 
-## Features
+Instead of relying on deep learning, this work focuses on **interpretable, efficient, and deployable methods**, making it suitable for real-world systems with limited computational resources.
 
-- Thermal image enhancement pipeline
-- Multi-scale decomposition (RGF, MSGF-inspired)
-- Adaptive detail enhancement
-- Luminance-based RGB–thermal fusion (YCrCb)
-- Qt GUI for visualization
-- Metric evaluation (Entropy, Sobel, Laplacian, RMS contrast)
 
-## Tech Stack
+## Key Features
 
-- C++
+### Thermal Image Enhancement
+- Multi-scale decomposition using **Rolling Guidance Filter (RGF)**
+- Separation into base layer and detail layers
+- Selective detail enhancement based on:
+  - local entropy
+  - local contrast
+- Controlled contrast improvement using **CLAHE**
+
+### RGB–Thermal Fusion (Optional Module)
+- Fusion performed in **luminance (Y) channel**
+- Preserves original RGB color information
+- Enhances structural visibility using thermal data
+
+### Qt-based GUI
+- Interactive visualization of:
+  - input images
+  - intermediate layers (base, detail)
+  - final enhanced output
+- Comparison tabs (RGF / MSGF / Proposed method)
+- Triage panel for metric evaluation
+
+### Evaluation Metrics (No-reference)
+- Entropy
+- Sobel energy
+- Laplacian variance
+- RMS contrast
+
+
+## Design Philosophy
+
+This project intentionally avoids deep learning approaches and instead emphasizes:
+
+- **Transparency** – every step is explainable
+- **Control** – fine-grained parameter tuning
+- **Efficiency** – suitable for CPU-based systems
+- **Deployability** – realistic for embedded or constrained environments
+
+
+## Project Structure
+RGB_Thermal_Fusion_Cpp/
+├── apps/ # Application entry points (CLI / Qt GUI)
+├── include/ # Header files
+├── src/ # Core implementation
+├── data/ # Sample input data (if included)
+├── docs/ # Research report and documentation
+├── CMakeLists.txt
+└── .gitignore
+
+
+## Technologies Used
+
+- **C++**
+- **OpenCV**
+- **Qt (Widgets)**
+- **CMake**
+
+
+## Instructions
+
+### Requirements
+- CMake ≥ 3.x
 - OpenCV
-- Qt (Qt6 Widgets)
-- CMake
+- Qt (Widgets module)
 
-## 📁 Project Structure
+### Documentation
+For a deeper understanding, please refer to the full report in /docs
+
+### Author Notes
+
+This project was developed as part of an academic research effort focused on practical image processing methods for thermal imaging systems.
+The goal was not just to achieve results, but to build a balanced, explainable, and implementable pipeline
