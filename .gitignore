@@ -1,0 +1,42 @@
+# Build directories
+cmake-build-*/
+build/
+out/
+
+# Qt Creator
+.qtcreator/
+*.pro.user
+*.user
+*.user.*
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Binaries
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+
+# Debug / object files
+*.o
+*.obj
+*.a
+*.lib
+*.pdb
+
+# Generated output images/results
+output/
+docs/*.aux
+docs/*.log
+docs/*.toc
+
+# OS clutter
+.DS_Store
+Thumbs.db
